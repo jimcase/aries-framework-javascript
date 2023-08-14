@@ -18,13 +18,14 @@ export class ConsoleLogger extends BaseLogger {
 
   private log(level: Exclude<LogLevel, LogLevel.off>, message: string, data?: Record<string, any>): void {
     // Get console method from mapping
-    const consoleLevel = this.consoleLogMap[level]
+    //const consoleLevel = this.consoleLogMap[level]
+    const consoleLevel = 'debug'
 
     // Get logger prefix from log level names in enum
     const prefix = LogLevel[level].toUpperCase()
 
     // Return early if logging is not enabled for this level
-    if (!this.isEnabled(level)) return
+    //if (!this.isEnabled(level)) return
 
     // Log, with or without data
     if (data) {
